@@ -4,8 +4,9 @@
   .productItemDiv {
     display: flex;
     flex-wrap: wrap;
-    margin: 50px 50px 0px 50px;
+    padding: 50px 50px 0px 50px;
     justify-content: center;
+   background-color: #ededed;
   }
   .productItemCard {
     cursor: pointer;

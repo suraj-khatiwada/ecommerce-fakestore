@@ -7,7 +7,7 @@ import "./dashboard.scss";
 
 const Dashboard = (props) => {
   const { fetchData, allProductItems, productsLoading, productsError } = props;
-  console.log("Props", props);
+
   const history = useHistory();
 
   useEffect(() => {

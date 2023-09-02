@@ -13,11 +13,12 @@ import {
   NavItem,
 } from "reactstrap";
 import { UserContext } from "../../utils/userContext";
+import { getNameInitial } from "../../utils/commonUtilis";
 
 const NavigationBar = () => {
   const { username, setUsername, cartItems } = useContext(UserContext);
   const history = useHistory();
-
+  console.log("username", username);
   useEffect(() => {
     if (!getLocalStorage("username")) {
       history.replace("/");
@@ -55,7 +56,9 @@ const NavigationBar = () => {
             <NavItem className="welcomeUser">Welcome, {username} </NavItem>
           </Nav>
         </Collapse>
-        <img style={{ marginLeft: "0px" }} src={userLogo} />
+        <div className="profile-badge">
+          {username && getNameInitial(username)}
+        </div>
       </Navbar>
     </div>
   );

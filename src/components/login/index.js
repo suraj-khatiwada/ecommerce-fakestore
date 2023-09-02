@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Button, Card, Input, Form, CardImg } from "reactstrap";
-import { ProfileImg } from "../../assets/images";
+import { ProfileImg, LoginCover } from "../../assets/images";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { Link, useHistory } from "react-router-dom";
@@ -16,8 +16,11 @@ function Login() {
       password: "",
     },
     validationSchema: Yup.object({
-      userName: Yup.string().required("Username is empty").nullable(),
-      password: Yup.string().required("Password is empty").nullable(),
+      userName: Yup.string()
+        .required("Email is required")
+        .email("Invalid Email")
+        .nullable(),
+      password: Yup.string().required("Password is required").nullable(),
     }),
 
     onSubmit: (values) => {
@@ -32,10 +35,13 @@ function Login() {
 
   return (
     <div className="mainCard">
+      <div className="login-leftside">
+        <img src={LoginCover} />
+      </div>
       <Card className="formCard">
         <div className="divInsideCard">
           <div>
-            <CardImg alt="profile" src={ProfileImg} className="profileImg" />
+            <h1 className="login_info">Enter your username and password</h1>
           </div>
           <Form onSubmit={formik.handleSubmit}>
             <div className="inputDiv">
@@ -43,7 +49,7 @@ function Login() {
                 invalid={formik.touched.userName && formik.errors.userName}
                 id="userName"
                 type="text"
-                placeholder="Username"
+                placeholder="Email"
                 className="loginDetailBox"
                 innerRef={textInput}
                 name="userName"
