@@ -1,0 +1,52 @@
+h2 {
+  text-align: center;
+  letter-spacing: 2px;
+}
+.cartItems {
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+
+  .cartItemlists {
+    display: flex !important;
+    flex-direction: column;
+
+    margin-top: 30px;
+    border: 1px solid #74d1be;
+
+    .cartItem {
+      display: flex;
+      flex-direction: row;
+    }
+    img {
+      width: 100px;
+
+      padding: 10px;
+    }
+    .card-body {
+      text-align: center;
+    }
+    .card-title {
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+    .deleteIcon {
+      width: 50px;
+      cursor: pointer;
+    }
+  }
+  .checkout {
+    text-align: right;
+    width: 180px;
+    margin-left: auto;
+  }
+  p {
+    color: black !important;
+  }
+  .btn {
+    background-color: #74d1be;
+    border: none;
+    cursor: pointer;
+  }
+}

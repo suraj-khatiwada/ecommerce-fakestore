@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+body {
+  font-family: "Roboto", sans-serif !important;
+}
+.mainCard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.formCard {
+  background-color: #74d1be !important;
+  width: 400px;
+  margin-top: 100px;
+  border-radius: 8px;
+}
+h3 {
+  text-align: center;
+  color: white;
+}
+.profileImg {
+  width: 120px !important;
+  margin-bottom: 10px;
+  margin-left: 80px;
+}
+
+.formBtn {
+  width: 300px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.divInsideCard {
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+}
+
+.inputDiv {
+  margin-top: 20px;
+}
+Input {
+  width: 300px !important;
+}
+.errorMessage {
+  color: red;
+  text-align: left;
+
+  font-size: 13px;
+}
+p {
+  color: white;
+  text-align: center;
+}
+.forgotPwd {
+  text-align: left;
+  font-size: 13px;
+  color: white;
+  margin-bottom: 0px;
+}

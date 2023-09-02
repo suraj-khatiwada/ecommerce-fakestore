@@ -1,0 +1,30 @@
+.mainDiv {
+  margin-top: 40px;
+
+  h2 {
+    text-align: center;
+    letter-spacing: 2px;
+    color: #74d1be;
+  }
+  .similarProducts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  .card {
+    flex-basis: 300px;
+    align-items: center;
+    margin: 10px;
+    cursor: pointer;
+    box-shadow: 8px 10px 7px -5px #b0b0b0;
+  }
+  img {
+    width: 180px;
+    height: 240px;
+    padding: 10px;
+  }
+  .card-text {
+    color: black;
+  }
+}

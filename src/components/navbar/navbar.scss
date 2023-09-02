@@ -1,0 +1,29 @@
+.dashboard {
+  .navbar-brand {
+    cursor: pointer;
+  }
+  .navbar {
+    background-color: #74d1be;
+
+    img {
+      width: 80px;
+      height: 50px;
+      margin-left: 50px;
+      margin-top: 0px;
+    }
+    .nav-item {
+      color: white;
+      margin-left: 50px;
+      cursor: pointer;
+    }
+
+    .cartItems {
+      color: red;
+      margin-left: 2px;
+      margin-top: -8px;
+    }
+    .welcomeUser {
+      margin-left: auto;
+    }
+  }
+}
