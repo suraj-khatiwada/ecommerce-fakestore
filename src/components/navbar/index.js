@@ -11,6 +11,7 @@ import {
   NavbarBrand,
   NavbarToggler,
   NavItem,
+  UncontrolledDropdown,
 } from "reactstrap";
 import { UserContext } from "../../utils/userContext";
 import { getNameInitial } from "../../utils/commonUtilis";
@@ -18,7 +19,7 @@ import { getNameInitial } from "../../utils/commonUtilis";
 const NavigationBar = () => {
   const { username, setUsername, cartItems } = useContext(UserContext);
   const history = useHistory();
-  console.log("username", username);
+
   useEffect(() => {
     if (!getLocalStorage("username")) {
       history.replace("/");
@@ -58,6 +59,7 @@ const NavigationBar = () => {
         </Collapse>
         <div className="profile-badge">
           {username && getNameInitial(username)}
+          <UncontrolledDropdown></UncontrolledDropdown>
         </div>
       </Navbar>
     </div>

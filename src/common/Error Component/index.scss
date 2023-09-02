@@ -1,0 +1,27 @@
+.error-component{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .error-component_icon{
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    img{
+        width: 76px !important;
+        height: 76px !important;
+    }
+    .error-component_reload{
+        button{
+            background-color: #FF735C !important;
+            border: 1px solid #f3654f !important;
+            &:hover{
+            background-color: #f58372 !important;
+          
+            }
+        }
+    }
+}

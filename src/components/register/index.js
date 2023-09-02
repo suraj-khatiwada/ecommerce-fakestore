@@ -1,11 +1,15 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Button, Card, Form, Input } from "reactstrap";
-import { Formik, useFormik } from "formik";
+import { useFormik } from "formik";
 import * as Yup from "yup";
 import { Link } from "react-router-dom";
 
+import { LoginCover } from "../../assets/images";
+import { useHistory } from "react-router-dom/cjs/react-router-dom";
+
 function Registration() {
   const textInput = useRef();
+  const history = useHistory();
 
   const formik = useFormik({
     initialValues: {
@@ -15,12 +19,17 @@ function Registration() {
       confirmPassword: "",
     },
     validationSchema: Yup.object({
-      username: Yup.string().required("Username is empty"),
-      email: Yup.string().required("Email is empty"),
-      password: Yup.string().required("Password is empty"),
-      confirmPassword: Yup.string().required("Password is empty"),
+      username: Yup.string().required("Username is required"),
+      email: Yup.string().required("Email is required").email("Invalid email"),
+      password: Yup.string().required("Password is required"),
+      confirmPassword: Yup.string().oneOf(
+        [Yup.ref("password"), null],
+        "Password does not match"
+      ),
     }),
-    onSubmit: (userRegisterDetails) => {},
+    onSubmit: (userRegisterDetails) => {
+      history.push("/");
+    },
   });
 
   useEffect(() => {
@@ -29,10 +38,13 @@ function Registration() {
 
   return (
     <div className="mainCard">
+      <div className="login-leftside">
+        <img src={LoginCover} />
+      </div>
       <Card className="formCard">
         <div className="divInsideCard">
           <div>
-            <h3>Create an account</h3>
+            <h1 className="login_info">Create an account</h1>
           </div>
           <Form onSubmit={formik.handleSubmit}>
             <div className="inputDiv">
@@ -99,12 +111,14 @@ function Registration() {
                 REGISTER
               </Button>
             </div>
-            <p>
-              Already Have an Account?{" "}
-              <span>
-                <Link to={"/"}>Login</Link>
-              </span>
-            </p>
+            <div style={{ display: "flex" }}>
+              <p>
+                Already Have an Account?{" "}
+                <span>
+                  <Link to={"/"}>Login</Link>
+                </span>
+              </p>
+            </div>
           </Form>
         </div>
       </Card>

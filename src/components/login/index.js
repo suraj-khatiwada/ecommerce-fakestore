@@ -1,6 +1,6 @@
-import React, { useEffect, useRef, useState } from "react";
-import { Button, Card, Input, Form, CardImg } from "reactstrap";
-import { ProfileImg, LoginCover } from "../../assets/images";
+import React, { useEffect, useRef } from "react";
+import { Button, Card, Input, Form } from "reactstrap";
+import { LoginCover } from "../../assets/images";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { Link, useHistory } from "react-router-dom";
@@ -41,7 +41,7 @@ function Login() {
       <Card className="formCard">
         <div className="divInsideCard">
           <div>
-            <h1 className="login_info">Enter your username and password</h1>
+            <h1 className="login_info">Enter your email and password</h1>
           </div>
           <Form onSubmit={formik.handleSubmit}>
             <div className="inputDiv">
@@ -79,12 +79,14 @@ function Login() {
               <Button className="formBtn" type="submit">
                 LOGIN
               </Button>
-              <p>
-                Not a member?{" "}
-                <span>
-                  <Link to={"/registration"}> Signup now</Link>
-                </span>
-              </p>
+              <div style={{ display: "flex" }}>
+                <p>
+                  Not a member?{" "}
+                  <span>
+                    <Link to={"/registration"}> Signup now</Link>
+                  </span>
+                </p>
+              </div>
             </div>
           </Form>
         </div>

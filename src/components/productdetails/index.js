@@ -48,13 +48,9 @@ const ProductDetails = (props) => {
     fetchSpecificCategory(category);
   }, [productId]);
 
-  console.log("item", singleProduct);
-  console.log("categories", specificCategory);
-
   const addtoCart = (wishItem) => {
     const checkID = wishItem.id;
     setCartItems((prevState) => {
-      console.log("prevstate", prevState);
       let similarItem = prevState.find((item) => item.id === checkID);
       if (similarItem) {
         similarItem.count = similarItem.count + 1;

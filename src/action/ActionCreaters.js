@@ -32,7 +32,6 @@ export const fetchAllData = (data) => {
 };
 
 export const fetchSpecificCategory = (products) => (dispatch) => {
-  console.log("category in action creaters", products);
   dispatch(dataLoading());
 
   axios
@@ -48,7 +47,6 @@ export const fetchSpecificCategory = (products) => (dispatch) => {
 };
 
 export const fetchSingleProduct = (id) => (dispatch) => {
-  console.log("ID", id);
   dispatch(fetchSingleProductRequest());
   axios
     .get(`https://fakestoreapi.com/products/${id}`)
