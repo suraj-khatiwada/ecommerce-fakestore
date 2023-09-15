@@ -5,6 +5,9 @@ import { getLocalStorage } from "../../utils/storageUtils";
 import { NavLink, useHistory } from "react-router-dom";
 import {
   Collapse,
+  DropdownItem,
+  DropdownMenu,
+  DropdownToggle,
   Input,
   Nav,
   Navbar,
@@ -17,9 +20,14 @@ import { UserContext } from "../../utils/userContext";
 import { getNameInitial } from "../../utils/commonUtilis";
 
 const NavigationBar = () => {
-  const { username, setUsername, cartItems } = useContext(UserContext);
+  const { username, setUsername, cartItems, setCartItems } =
+    useContext(UserContext);
   const history = useHistory();
 
+  const handleUserLogout = () => {
+    history.push("/");
+    setCartItems([]);
+  };
   useEffect(() => {
     if (!getLocalStorage("username")) {
       history.replace("/");
@@ -36,15 +44,11 @@ const NavigationBar = () => {
             history.push("/dashboard");
           }}
         >
-          <img src={MainLogo} />
+          <h2>Fake Store</h2>
         </NavbarBrand>
         <NavbarToggler />
         <Collapse navbar>
           <Nav className="me-auto w-100" navbar>
-            <NavItem>
-              <NavLink to="#" />
-              Add New Product
-            </NavItem>
             <NavItem
               onClick={() => {
                 history.push("/mycart");
@@ -52,14 +56,28 @@ const NavigationBar = () => {
             >
               My Cart
             </NavItem>
-            <NavItem className="cartItems">{cartItems.length}</NavItem>
+            <NavItem className="cartItems">
+              {cartItems.length > 0 && cartItems.length}
+            </NavItem>
 
             <NavItem className="welcomeUser">Welcome, {username} </NavItem>
           </Nav>
         </Collapse>
         <div className="profile-badge">
-          {username && getNameInitial(username)}
-          <UncontrolledDropdown></UncontrolledDropdown>
+          <UncontrolledDropdown>
+            <DropdownToggle>
+              {username && getNameInitial(username)}
+            </DropdownToggle>
+            <DropdownMenu>
+              <DropdownItem
+                onClick={() => {
+                  handleUserLogout();
+                }}
+              >
+                Log out
+              </DropdownItem>
+            </DropdownMenu>
+          </UncontrolledDropdown>
         </div>
       </Navbar>
     </div>

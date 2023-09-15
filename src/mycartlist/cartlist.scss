@@ -13,11 +13,13 @@ h2 {
     flex-direction: column;
 
     margin-top: 30px;
-    border: 1px solid #74d1be;
+    border: 1px solid #FF735C;
 
     .cartItem {
       display: flex;
       flex-direction: row;
+    align-items: center;
+
     }
     img {
       width: 100px;
@@ -45,8 +47,9 @@ h2 {
     color: black !important;
   }
   .btn {
-    background-color: #74d1be;
+    background-color: #FF735C;
     border: none;
     cursor: pointer;
+  
   }
 }

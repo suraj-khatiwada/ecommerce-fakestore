@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useHistory, useLocation, withRouter } from "react-router-dom";
 import { Card, CardBody, CardImg, CardText, CardTitle } from "reactstrap";
 import "./category.scss";
-import { connect } from "react-redux";
 
 function SpecificCategory(props) {
   const { productId, category } = props;

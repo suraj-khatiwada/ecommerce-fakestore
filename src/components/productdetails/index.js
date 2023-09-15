@@ -20,6 +20,7 @@ import {
   fetchSingleProduct,
   fetchSpecificCategory,
 } from "../../action/ActionCreaters";
+import { GridLoader } from "react-spinners";
 
 const ProductDetails = (props) => {
   const {
@@ -99,7 +100,16 @@ const ProductDetails = (props) => {
       </div>
     );
   } else {
-    return <span> Loading ... </span>;
+    return (
+      <div className="detail-product-loader">
+        <GridLoader
+          color={"#FF735C"}
+          size={20}
+          aria-label="Loading Spinner"
+          data-testid="loader"
+        />
+      </div>
+    );
   }
 };
 
