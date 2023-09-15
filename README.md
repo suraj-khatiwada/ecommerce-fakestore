@@ -1,4 +1,4 @@
-Social Media Web App Using Firebase
+A ecommerce using fakeApis
 
 $ npm -v && node -v 6.4.1 v8.16.0
 
